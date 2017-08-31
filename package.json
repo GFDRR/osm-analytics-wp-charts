@@ -1,0 +1,23 @@
+{
+  "name": "wp-osma-charts",
+  "version": "1.0.0",
+  "description": "This Wordpress plugin provides integration with OSMA to display charts and maps inside pages.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update-osma-charts": "cp -p ./node_modules/osma-charts/public/bundle.js scripts && cp -p ./node_modules/osma-charts/public/styles.css styles"
+  },
+  "dependencies": {
+    "osma-charts": "git+ssh://git@github.com/Vizzuality/osma-charts.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vizzuality/wp-osma-charts.git"
+  },
+  "author": "Vizzuality",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vizzuality/wp-osma-charts/issues"
+  },
+  "homepage": "https://github.com/Vizzuality/wp-osma-charts#readme"
+}

@@ -6,6 +6,20 @@ This Wordpress plugin provides integration with OSMA to display charts and maps 
 
 Install like any other Wordpress plugin
 
+## Build from source
+
+On the <a href="https://github.com/Vizzuality/wp-osma-charts">source repo</a>, build and push:
+```
+npm run build
+...
+git push origin master
+```
+
+On this repo, update and copy the dependencies:
+```
+npm update && npm run update-osma-charts
+```
+
 ## Configuration
 
 The plugin supports 2 configuration values, both of which are required:
@@ -20,7 +34,7 @@ The plugin currently provides 3 shortcodes, each rendering a different visualiza
 #### Compare map:
 ![Compare map](https://github.com/GFDRR/opendri-website/blob/master/wp-content/plugins/osma-charts/samples/map.png?raw=true '')
 
-###### Shortcode: 
+###### Shortcode:
 `osma_charts_compare_map`
 
 ###### Options + example values:
@@ -29,23 +43,23 @@ The plugin currently provides 3 shortcodes, each rendering a different visualiza
 - default_end_year="now"
 - country="SWE"
 
-#### Activity chart: 
+#### Activity chart:
 ![Activity chart](https://github.com/GFDRR/opendri-website/blob/master/wp-content/plugins/osma-charts/samples/activity.png?raw=true "Compare map")
 
-###### Shortcode: 
+###### Shortcode:
 `osma_charts_activity`
 
 ###### Options + example values:
 - country="HTI"
 - start_date="2000/01/01"
 - end_date="2017/02/01"
-- default_granularity="monthly" 
+- default_granularity="monthly"
 - default_facet="features"
 
 #### Contributors chart:
 ![Contributors chart](https://github.com/GFDRR/opendri-website/blob/master/wp-content/plugins/osma-charts/samples/contributors.png?raw=true "Compare map")
 
-###### Shortcode: 
+###### Shortcode:
 `osma_charts_contributors`
 
 ###### Options + example values:
@@ -55,5 +69,5 @@ The plugin currently provides 3 shortcodes, each rendering a different visualiza
 
 ## Development
 
-This plugin is a Wordpress wrapper for JavaScript/CSS found in [OSMA Charts](https://github.com/Vizzuality/osma-charts), and the content of `scripts` and `styles` are exports of that project. 
-Keep this in mind if you wish to modify them. 
+This plugin is a Wordpress wrapper for JavaScript/CSS found in [OSMA Charts](https://github.com/Vizzuality/osma-charts), and the content of `scripts` and `styles` are exports of that project.
+Keep this in mind if you wish to modify them.
