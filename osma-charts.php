@@ -88,13 +88,15 @@ function activity_chart( $atts ) {
     window.document.body.classList.add('-has-osm-attribution');
     var settings = {$atts_encode};
     var country = settings.country.toUpperCase() || 'HTI';
-    fetch('{$OSMA_API_ENDPOINT_ADDRESS}/stats/all/country/' + country + '?period=' + settings.start_date + ',' + settings.end_date)
+    var apiUrl = '{$OSMA_API_ENDPOINT_ADDRESS}/stats/all/country/' + country + '?period=' + settings.start_date + ',' + settings.end_date;
+    fetch(apiUrl)
       .then(function(response) {
         return response.json();
       })
       .then(function(data) {
         ODRI.activity('#{$chart_id}', {
           data: data,
+          apiUrl: apiUrl,
           granularity: settings.default_granularity,
           facet: settings.default_facet,
           range: [settings.start_date, settings.end_date]
@@ -122,13 +124,15 @@ function contributor_chart( $atts ) {
     window.document.body.classList.add('-has-osm-attribution');
     var settings = {$atts_encode};
     var country = settings.country.toUpperCase() || 'HTI';
-    fetch('{$OSMA_API_ENDPOINT_ADDRESS}/stats/all/country/' + country + '?period=' + settings.start_date + ',' + settings.end_date)
+    var apiUrl = '{$OSMA_API_ENDPOINT_ADDRESS}/stats/all/country/' + country + '?period=' + settings.start_date + ',' + settings.end_date;
+    fetch(apiUrl)
       .then(function(response) {
         return response.json();
       })
       .then(function(data) {
         ODRI.contributors('#{$chart_id}', {
           data: data,
+          apiUrl: apiUrl,
           range: [settings.start_date, settings.end_date]
         })
       });
