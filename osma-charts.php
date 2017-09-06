@@ -118,7 +118,7 @@ function contributor_chart( $atts ) {
   $loader = loading($width, $height, $loader_bg, 'margin-top: 1rem;margin-bottom: 1rem;');
 
   return <<<EOD
-  <div id="{$chart_id}" style="width: 50%">{$loader}</div>
+  <div id="{$chart_id}" style="width: 90%; max-width: 600px">{$loader}</div>
   <script>
   (function() {
     window.document.body.classList.add('-has-osm-attribution');
