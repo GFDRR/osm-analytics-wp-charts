@@ -115,6 +115,8 @@ function contributor_chart( $atts ) {
   $chart_id = uniqid('contributor-chart-');
   $width = getVal($atts, 'width', '100%');
   $height = getVal($atts, 'height', '450px');
+  $numUsers = getVal($atts, 'num_users', '10');
+  $featureType = getVal($atts, 'feature_type', 'buildings');
   $loader = loading($width, $height, $loader_bg, 'margin-top: 1rem;margin-bottom: 1rem;');
 
   return <<<EOD
@@ -133,7 +135,9 @@ function contributor_chart( $atts ) {
         ODRI.contributors('#{$chart_id}', {
           data: data,
           apiUrl: apiUrl,
-          range: [settings.start_date, settings.end_date]
+          range: [settings.start_date, settings.end_date],
+          featureType: '{$featureType}',
+          numUsers: {$numUsers}
         })
       });
   })()

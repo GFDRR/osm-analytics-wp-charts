@@ -64,7 +64,9 @@ The plugin currently provides 3 shortcodes, each rendering a different visualiza
 - __country__ or __polygon__ (mandatory) ISO3 country code or an encoded polyline of the area of interest related to the project (ie `ifv%7BDndwkBx%60%40aYwQev%40sHkPuf%40ss%40%7BfA_%40uq%40xdCn%7D%40%5E`))
 - __start_date__ (mandatory) (`2016-01-01`) represents the start date of an OpenDRI project
 - __end_date__ (mandatory) (`2017-01-01`) represents the end date of an OpenDRI project
-
+- __num_users__ (`10`) number of users to show on the chart.
+- __feature_type__ (`buildings`) buildings, highways or waterways
+ 
 ###### Example:
 
 ```
