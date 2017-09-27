@@ -20,6 +20,9 @@ The plugin currently provides 3 shortcodes, each rendering a different visualiza
 #### Compare map:
 ![Compare map](https://github.com/GFDRR/osm-analytics-wp-charts/blob/master/samples/map.png?raw=true 'Compare map')
 
+The compare map consists of a trimmed-down, embedded version of the OSM Analytics site. It uses a slider to show the status 
+of OSM contributions in two dates, allowing a seamless visual comparison between them.
+
 ###### Shortcode:
 `osma_charts_compare_map`
 
@@ -37,6 +40,9 @@ The plugin currently provides 3 shortcodes, each rendering a different visualiza
 
 #### Activity chart:
 ![Activity chart](https://github.com/GFDRR/osm-analytics-wp-charts/blob/master/samples/activity.png?raw=true "Activity chart")
+
+The activity charts illustrate a comparison between contributions done on multiple OSM features. As the features may not be directly aggregatable,
+a simplified [https://en.wikipedia.org/wiki/Mahalanobis_distance](Mahalanobis distance) calculation is used to aggregate contributions.  
 
 ###### Shortcode:
 `osma_charts_activity`
@@ -56,6 +62,8 @@ The plugin currently provides 3 shortcodes, each rendering a different visualiza
 
 #### Contributors chart:
 ![Contributors chart](https://github.com/GFDRR/osm-analytics-wp-charts/blob/master/samples/contributors.png?raw=true "Contributors chart")
+
+The contributors chart shows a list of the top users for the given filter options, and an aggregated value for the remaining contributions
 
 ###### Shortcode:
 `osma_charts_contributors`
