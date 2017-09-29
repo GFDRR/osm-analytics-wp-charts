@@ -78,7 +78,49 @@ The contributors chart shows a list of the top users for the given filter option
 ###### Example:
 
 ```
-[osma_charts_contributors country="HTI" start_date="2000-01-01" end_date="2017-02-01"]
+[osma_charts_statistics_table country="UGA" start_date="2010/01/01" end_date="2017/02/01" statistics="buildings-users,buildings-activity,waterways-users,waterways-activity"]
+```
+
+#### Statistics table:
+![Statistics table](https://github.com/GFDRR/osm-analytics-wp-charts/blob/master/samples/statistics.png?raw=true "Statistics table")
+
+The statistics table shows a list of the most relevant statistics for a given geography and time range.
+
+###### Shortcode:
+`osma_charts_statistics_table`
+
+###### Options + example values:
+- __country__ or __polygon__ (mandatory) ISO3 country code or an encoded polyline of the area of interest related to the project (ie `ifv%7BDndwkBx%60%40aYwQev%40sHkPuf%40ss%40%7BfA_%40uq%40xdCn%7D%40%5E`))
+- __start_date__ (mandatory) (`2016-01-01`) represents the start date of an OpenDRI project
+- __end_date__ (mandatory) (`2017-01-01`) represents the end date of an OpenDRI project
+- __statistics__ (mandatory) (`buildings-users,...`) a comma separated list of feature/type pairs. Each feature/type pair must be separated by a dash. Features can be 
+  `buildings`, `waterways` or `waterways`, and type should be either `users` or `activity`
+ 
+###### Example:
+
+```
+[osma_charts_statistics_table country="UGA" start_date="2010/01/01" end_date="2017/02/01" statistics="buildings-users,buildings-activity,waterways-users,waterways-activity"]
+```
+
+
+#### Statistic value:
+
+Shows a single statistical value for a given geography and time range. Ideal for embedding inline with other text.
+
+###### Shortcode:
+`osma_charts_statistic_value`
+
+###### Options + example values:
+- __country__ or __polygon__ (mandatory) ISO3 country code or an encoded polyline of the area of interest related to the project (ie `ifv%7BDndwkBx%60%40aYwQev%40sHkPuf%40ss%40%7BfA_%40uq%40xdCn%7D%40%5E`))
+- __start_date__ (mandatory) (`2016-01-01`) represents the start date of an OpenDRI project
+- __end_date__ (mandatory) (`2017-01-01`) represents the end date of an OpenDRI project
+- __feature_type__ (mandatory) (`buildings`) `buildings`, `waterways` or `waterways`
+- __statistic__ (mandatory) (`users`) type should be either `users` or `activity`
+ 
+###### Example:
+
+```
+[osma_charts_statistic_value country="UGA" start_date="2010/01/01" end_date="2017/02/01" feature_type="buildings" statistic="activity"]
 ```
 
 
