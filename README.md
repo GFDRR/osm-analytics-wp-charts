@@ -126,7 +126,7 @@ Shows a single statistical value for a given geography and time range. Ideal for
 
 ## Development / build from source
 
-This plugin is a Wordpress wrapper for JavaScript/CSS found in [OSMA Charts](https://github.com/Vizzuality/osma-charts), and the content of `scripts` and `styles` are exports of that project.
+This plugin is a Wordpress wrapper for JavaScript/CSS found in [OSMA Charts](https://github.com/GFDRR/osm-analytics-charts), and the content of `scripts` and `styles` are exports of that project.
 
 On the <a href="https://github.com/Vizzuality/wp-osma-charts">source repo</a>, build and push:
 ```
