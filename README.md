@@ -52,7 +52,8 @@ a simplified [https://en.wikipedia.org/wiki/Mahalanobis_distance](Mahalanobis di
 - __start_date__ (mandatory) (`2016-01-01`) represents the start date of an OpenDRI project
 - __end_date__ (mandatory) (`2017-01-01`) represents the end date of an OpenDRI project
 - __default_granularity__ (`daily`) show activity `daily|weekly|monthly` by default
-- __default_facet__ (`features`) show either `features` or `users` histogram by default
+- __default_facet__ (`features`) show either `features` or `users` histogram by default. `users` facet is only supported if precision is set to 13.
+- __precision__ (`13`) value between 1 and 13, specifying accuracy of data to display.
 
 ###### Example:
 
@@ -94,7 +95,9 @@ The statistics table shows a list of the most relevant statistics for a given ge
 - __start_date__ (mandatory) (`2016-01-01`) represents the start date of an OpenDRI project
 - __end_date__ (mandatory) (`2017-01-01`) represents the end date of an OpenDRI project
 - __statistics__ (mandatory) (`buildings-users,...`) a comma separated list of feature/type pairs. Each feature/type pair must be separated by a dash. Features can be 
-  `buildings`, `waterways` or `waterways`, and type should be either `users` or `activity`
+  `buildings`, `waterways` or `waterways`, and type should be either `users` or `activity`. `users` statistics are only available if precision is set to 13.
+- __precision__ (`13`) value between 1 and 13, specifying accuracy of data to display.
+
  
 ###### Example:
 
@@ -115,8 +118,9 @@ Shows a single statistical value for a given geography and time range. Ideal for
 - __start_date__ (mandatory) (`2016-01-01`) represents the start date of an OpenDRI project
 - __end_date__ (mandatory) (`2017-01-01`) represents the end date of an OpenDRI project
 - __feature_type__ (mandatory) (`buildings`) `buildings`, `waterways` or `waterways`
-- __statistic__ (mandatory) (`users`) type should be either `users` or `activity`
- 
+- __statistic__ (mandatory) (`users`) type should be either `users` or `activity`. `users` statistics are only available if precision is set to 13.
+- __precision__ (`13`) value between 1 and 13, specifying accuracy of data to display.
+
 ###### Example:
 
 ```
@@ -126,7 +130,7 @@ Shows a single statistical value for a given geography and time range. Ideal for
 
 ## Development / build from source
 
-This plugin is a Wordpress wrapper for JavaScript/CSS found in [OSMA Charts](https://github.com/GFDRR/osm-analytics-charts), and the content of `scripts` and `styles` are exports of that project.
+This plugin is a Wordpress wrapper for JavaScript/CSS found in [OSMA Charts](https://github.com/Vizzuality/osma-charts), and the content of `scripts` and `styles` are exports of that project.
 
 On the <a href="https://github.com/Vizzuality/wp-osma-charts">source repo</a>, build and push:
 ```

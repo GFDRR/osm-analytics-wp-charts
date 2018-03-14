@@ -93,6 +93,7 @@ function activity_chart( $atts ) {
   $height = getVal($atts, 'height', '320px');
   $country = getVal($atts, 'country', null);
   $polygon = getVal($atts, 'polygon', null);
+  $precision = getVal($atts, 'precision', 13);
   $loader = loading($width, $height, $loader_bg, 'margin: 1rem 0;');
 
   if ($country === null && $polygon === null) {
@@ -113,6 +114,7 @@ EOD;
     var settings = {$atts_encode};
     var country = '{$country}';
     var polygon = '{$polygon}';
+    var precision = '{$precision}';
     
     var apiUrl = '{$OSMA_API_ENDPOINT_ADDRESS}/stats/all/';
     
@@ -121,7 +123,7 @@ EOD;
     } else {
       apiUrl += 'polygon/' + polygon;
     }
-    apiUrl += '?period=' + settings.start_date + ',' + settings.end_date;
+    apiUrl += '?period=' + settings.start_date + ',' + settings.end_date + '&precision=' + precision;
     
     fetch(apiUrl)
       .then(function(response) {
@@ -131,6 +133,7 @@ EOD;
         ODRI.activity('#{$chart_id}', {
           data: data,
           apiUrl: apiUrl,
+          precision: precision,
           granularity: settings.default_granularity,
           facet: settings.default_facet,
           range: [settings.start_date, settings.end_date]
@@ -155,7 +158,7 @@ function contributor_chart( $atts ) {
   $polygon = getVal($atts, 'polygon', null);
   $loader = loading($width, $height, $loader_bg, 'margin-top: 1rem;margin-bottom: 1rem;');
   
-  if (($country === null && $polygon === null) || $featureType === null) {
+  if ($country === null && $polygon === null) {
     return <<<EOD
   <script>
   (function() {
@@ -181,7 +184,7 @@ EOD;
     } else {
       apiUrl += 'polygon/' + polygon;
     }
-    apiUrl += '?period=' + settings.start_date + ',' + settings.end_date;
+    apiUrl += '?period=' + settings.start_date + ',' + settings.end_date + '&precision=13';
     
     fetch(apiUrl)
       .then(function(response) {
@@ -209,6 +212,7 @@ function statistics_table( $atts ) {
   $statistics = getVal($atts, 'statistics', '');
   $country = getVal($atts, 'country', null);
   $polygon = getVal($atts, 'polygon', null);
+  $precision = getVal($atts, 'precision', 13);
   $loader = loading('320px', '100%', $loader_bg, 'margin: 1rem 0;');
   
   $statisticsExploded = explode(',', $statistics);
@@ -239,6 +243,7 @@ EOD;
     var settings = {$atts_encode};
     var country = '{$country}';
     var polygon = '{$polygon}';
+    var precision = '{$precision}';
     var apiUrl = '{$OSMA_API_ENDPOINT_ADDRESS}/stats/all/';
     
     if (country !== '') {
@@ -246,7 +251,7 @@ EOD;
     } else {
       apiUrl += 'polygon/' + polygon;
     }
-    apiUrl += '?period=' + settings.start_date + ',' + settings.end_date;
+    apiUrl += '?period=' + settings.start_date + ',' + settings.end_date + '&precision=' + precision;
     
     fetch(apiUrl)
       .then(function(response) {
@@ -270,6 +275,7 @@ function statistic_value( $atts ) {
   $chart_id = uniqid('statistic-value-', false);
   $country = getVal($atts, 'country', null);
   $polygon = getVal($atts, 'polygon', null);
+  $precision = getVal($atts, 'precision', 13);
   $feature_type = getVal($atts, 'feature_type', null);
   $statistic = getVal($atts, 'statistic', 'count_activity');
   
@@ -291,6 +297,7 @@ EOD;
     var settings = {$atts_encode};
     var country = '{$country}';
     var polygon = '{$polygon}';
+    var precision = '{$precision}';
     var apiUrl = '{$OSMA_API_ENDPOINT_ADDRESS}/stats/all/';
 
     if (country !== '') {
@@ -298,7 +305,7 @@ EOD;
     } else {
       apiUrl += 'polygon/' + polygon;
     }
-    apiUrl += '?period=' + settings.start_date + ',' + settings.end_date;
+    apiUrl += '?period=' + settings.start_date + ',' + settings.end_date + '&precision=' + precision;
     
     fetch(apiUrl)
       .then(function(response) {
